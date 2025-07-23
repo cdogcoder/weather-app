@@ -1,1 +1,3 @@
 # weather-app
+
+Hey everyone, I'm back with another project for the Odin Project! Today, using what I know about asynchronous JavaScript (Promises and Async/Await), as well as my knowledge of APIs, I will be building out a simple weather app! The implementation likely won't be anything too complicated, but it will give me an opportunity to show off my skills, so I hope you like the project. As always, media used in this project that are not my own will be linked here, make sure to show all the creators some love. And with that said, thank you for viewing this repo and I hope you enjoyed the project!
