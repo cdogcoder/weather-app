@@ -90,3 +90,15 @@ body {
 .search-button:active {
     cursor: grabbing;
 }
+
+
+.weather-gif-holder {
+    border: 1px solid black;
+    width: 200px;
+    height: 150px;
+}
+
+.weather-gif {
+    width: 100%;
+    height: auto;
+}
