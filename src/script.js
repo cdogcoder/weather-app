@@ -11,6 +11,7 @@ async function fetchWeatherData(location) {
     else {
         loadingIndicator.textContent = "";
         const json = await response.json();
+        console.log(json)
         return json;
     }
 }
@@ -18,7 +19,7 @@ async function fetchWeatherData(location) {
 async function extractWeatherData(json) {
     const awaitedJson = await json;
     if (Object.keys(awaitedJson) != 0) {
-        const location = awaitedJson.address.split(" ").map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase()).join(" ");
+        const location = awaitedJson.resolvedAddress;
         const currTemperature = awaitedJson.currentConditions.temp + "F";
         const currConditions = awaitedJson.currentConditions.conditions;
         const tempHigh = "H: " + awaitedJson.days[0].tempmax + "F";
