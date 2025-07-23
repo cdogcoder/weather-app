@@ -13,7 +13,7 @@ body {
     background-color: rgb(7, 24, 31);
 }
 
-.content-container {
+.app-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -31,7 +31,7 @@ body {
     text-align: center;
 }
 
-.city-name {
+.weather-location-name {
     font-size: 2.5rem;
     font-weight: bold;
     text-transform: capitalize;
@@ -42,17 +42,17 @@ body {
     font-size: 3.0rem;
 }
 
-.weather-condition {
+.weather-conditions {
     font-size: 1.25rem;
     font-weight: bold;
 }
 
-.hourly-temperatures {
+.weather-hourly-conditions {
     display: flex;
     justify-content: space-between;
 }
 
-.hourly-temperature {
+.weather-hourly-condition{
     display: flex;
     flex-direction: column;
     gap: .25rem;
@@ -62,17 +62,11 @@ body {
 
 .hour {
     font-size: 1.25rem;
-}
-
-.temperature {
-    font-size: .75rem;
-}
-
-.hour {
     font-weight: bold;
 }
 
-.temperature {
+.condition {
+    font-size: .75rem;
     text-align: center;
 }
 
@@ -90,7 +84,6 @@ body {
 .search-button:active {
     cursor: grabbing;
 }
-
 
 .weather-gif {
     width: 200px;
