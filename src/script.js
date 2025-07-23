@@ -40,4 +40,14 @@ async function displayWeatherData(arr) {
     }
 }
 
-displayWeatherData(extractWeatherData(fetchWeatherData("San Jose")))
+
+const searchBar = document.querySelector(".search-bar");
+const searchButton = document.querySelector(".search-button");
+searchButton.addEventListener("click", () => {
+    const searchBarValue = searchBar.value;
+    if (searchBarValue != 0) {
+        displayWeatherData(extractWeatherData(fetchWeatherData(searchBarValue)));
+    } else {
+        alert("You haven't typed anything, bozo.")
+    }
+})
