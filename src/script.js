@@ -58,6 +58,7 @@ searchButton.addEventListener("click", () => {
     const searchBarValue = searchBar.value;
     if (searchBarValue != 0) {
         displayWeatherData(extractWeatherData(fetchWeatherData(searchBarValue)));
+        searchBar.value = "";
     } else {
         alert("You haven't typed anything, bozo.")
     }
