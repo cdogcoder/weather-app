@@ -16,7 +16,8 @@ async function fetchWeatherData(location) {
         if (gifResponse.ok) {
             const gif = await gifResponse.json();
             const weatherGif = document.querySelector(".weather-gif");
-            weatherGif.src = gif.data.images.original.url;
+            weatherGif.textContent = "";
+            weatherGif.style.backgroundImage = `url(${gif.data.images.original.url})`;
         }
         return json;
     }

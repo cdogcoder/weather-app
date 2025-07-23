@@ -92,13 +92,14 @@ body {
 }
 
 
-.weather-gif-holder {
-    border: 1px solid black;
+.weather-gif {
     width: 200px;
     height: 150px;
-}
-
-.weather-gif {
-    width: 100%;
-    height: auto;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: contain;
+    background-position: center;
 }
