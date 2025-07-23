@@ -21,8 +21,8 @@ body {
     box-shadow: 0px 0px 15px 1px white;
     padding: 1rem;
     border-radius: 1rem;
-    min-height: 500px;
-    min-width: 400px;
+    min-height: 700px;
+    min-width: 500px;
     justify-content: center;
     align-items: center;
 }
@@ -35,6 +35,7 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     text-transform: capitalize;
+    max-width: 400px;
 }
 
 .weather-temperature {
@@ -48,7 +49,6 @@ body {
 
 .hourly-temperatures {
     display: flex;
-    width: 80%;
     justify-content: space-between;
 }
 
@@ -57,10 +57,15 @@ body {
     flex-direction: column;
     gap: .25rem;
     align-items: center;
+    width: 100px;
 }
 
-.hour, .temperature {
+.hour {
     font-size: 1.25rem;
+}
+
+.temperature {
+    font-size: .75rem;
 }
 
 .hour {
