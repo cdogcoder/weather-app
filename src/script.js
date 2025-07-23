@@ -5,6 +5,7 @@ async function fetchWeatherData(location) {
     loadingIndicator.textContent = "Fetching..."
     const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=3WRZYRZDUK273XPGNXVAZGD5Y&contentType=json`, {mode: "cors"});  
     if (!response.ok) {
+        loadingIndicator.textContent = "";
         alert("The input was ass. Try again.");
         return {};
     }
