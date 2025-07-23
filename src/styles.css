@@ -70,3 +70,8 @@ body {
 .temperature {
     text-align: center;
 }
+
+.search-bar, .search-button {
+    padding: .25rem .5rem;
+    border-radius: .25rem;
+}
