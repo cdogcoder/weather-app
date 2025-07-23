@@ -34,6 +34,7 @@ body {
 .city-name {
     font-size: 2.5rem;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 .weather-temperature {
@@ -64,4 +65,8 @@ body {
 
 .hour {
     font-weight: bold;
+}
+
+.temperature {
+    text-align: center;
 }
