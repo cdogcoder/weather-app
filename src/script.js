@@ -1,10 +1,10 @@
 import "./styles.css";
 
 async function fetchWeatherData(location) {
-    const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=3WRZYRZDUK273XPGNXVAZGD5Y&contentType=json`, {mode: "cors"});
+    const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=3WRZYRZDUK273XPGNXVAZGD5Y&contentType=json`, {mode: "cors"});  
     if (!response.ok) {
         alert("The input was ass. Try again.");
-        return {}
+        return {};
     }
     else {
         const json = await response.json();
@@ -40,4 +40,4 @@ async function displayWeatherData(arr) {
     }
 }
 
-displayWeatherData(extractWeatherData(fetchWeatherData("djsakfljdsa;lkfs")))
+displayWeatherData(extractWeatherData(fetchWeatherData("San Jose")))
