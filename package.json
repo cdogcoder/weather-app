@@ -1,0 +1,31 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Hey everyone, I'm back with another project for the Odin Project! Today, using what I know about asynchronous JavaScript (Promises and Async/Await), as well as my knowledge of APIs, I will be building out a simple weather app! The implementation likely won't be anything too complicated, but it will give me an opportunity to show off my skills, so I hope you like the project. As always, media used in this project that are not my own will be linked here, make sure to show all the creators some love. And with that said, thank you for viewing this repo and I hope you enjoyed the project!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx webpack serve",
+    "build": "npx webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdogcoder/weather-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdogcoder/weather-app/issues"
+  },
+  "homepage": "https://github.com/cdogcoder/weather-app#readme",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.100.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}
