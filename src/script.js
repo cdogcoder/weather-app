@@ -3,16 +3,21 @@ import "./styles.css";
 async function fetchWeatherData(location) {
     const loadingIndicator = document.querySelector(".loading-indicator");
     loadingIndicator.textContent = "Fetching..."
-    const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=3WRZYRZDUK273XPGNXVAZGD5Y&contentType=json`, {mode: "cors"});  
-    if (!response.ok) {
+    const weatherResponse = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=3WRZYRZDUK273XPGNXVAZGD5Y&contentType=json`, {mode: "cors"});  
+    if (!weatherResponse.ok) {
         loadingIndicator.textContent = "";
         alert("The input was ass. Try again.");
         return {};
     }
     else {
         loadingIndicator.textContent = "";
-        const json = await response.json();
-        console.log(json)
+        const json = await weatherResponse.json();
+        const gifResponse = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=DvyYfLs73SKPWnwdGe7smJNL9xUFvqTe&s=${json.currentConditions.conditions}`, {mode: "cors"});
+        if (gifResponse.ok) {
+            const gif = await gifResponse.json();
+            const weatherGif = document.querySelector(".weather-gif");
+            weatherGif.src = gif.data.images.original.url;
+        }
         return json;
     }
 }
