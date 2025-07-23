@@ -26,15 +26,22 @@ async function fetchWeatherData(location) {
 async function extractWeatherData(json) {
     const awaitedJson = await json;
     if (Object.keys(awaitedJson) != 0) {
+        const now = new Date();
         const location = awaitedJson.resolvedAddress;
         const currTemperature = awaitedJson.currentConditions.temp + "F";
         const currConditions = awaitedJson.currentConditions.conditions;
         const tempHigh = "H: " + awaitedJson.days[0].tempmax + "F";
         const tempLow = "L: " + awaitedJson.days[0].tempmin + "F";
-        const oneHourLaterConditions = awaitedJson.days[0].hours[7].conditions;
-        const twoHourLaterConditions = awaitedJson.days[0].hours[8].conditions;
-        const threeHourLaterConditions = awaitedJson.days[0].hours[9].conditions;
-        return [location, currTemperature, currConditions, tempHigh, tempLow, oneHourLaterConditions, twoHourLaterConditions, threeHourLaterConditions]
+        let oneHourLater = now.getHours()+1;
+        let twoHoursLater = now.getHours()+2;
+        let threeHoursLater = now.getHours()+3;
+        const oneHourLaterConditions = awaitedJson.days[0].hours[oneHourLater].conditions;
+        const twoHoursLaterConditions = awaitedJson.days[0].hours[twoHoursLater].conditions;
+        const threeHoursLaterConditions = awaitedJson.days[0].hours[threeHoursLater].conditions;
+        oneHourLater = oneHourLater > 12 ? oneHourLater-12 + "PM" : oneHourLater + "AM";
+        twoHoursLater = twoHoursLater > 12 ? twoHoursLater-12 + "PM" : twoHoursLater + "AM";
+        threeHoursLater = threeHoursLater > 12 ? threeHoursLater-12 + "PM" : threeHoursLater + "AM";
+        return [location, currTemperature, currConditions, tempHigh, tempLow, oneHourLater, oneHourLaterConditions, twoHoursLater, twoHoursLaterConditions, threeHoursLater, threeHoursLaterConditions]
     }   
     return []
 }
